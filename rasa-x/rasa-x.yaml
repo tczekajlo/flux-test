@@ -6,10 +6,9 @@ metadata:
   name: rasa-x
   namespace: flux-test
   annotations:
-    fluxcd.io/automated: "false"
 spec:
   releaseName: rasa-x
-  resetValues: false
+  reuseValues: false
   wait: true
   chart:
     repository: https://rasahq.github.io/rasa-x-helm
