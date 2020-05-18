@@ -1,0 +1,22 @@
+---
+# https://docs.fluxcd.io/projects/helm-operator/en/latest/references/helmrelease-custom-resource/
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: rasa-x
+  namespace: flux-test
+  annotations:
+    fluxcd.io/automated: "false"
+spec:
+  releaseName: rasa-x
+  resetValues: false
+  wait: true
+  chart:
+    repository: https://rasahq.github.io/rasa-x-helm
+    name: rasa-x
+    version: 1.2.7
+  values:
+    rasax:
+      tag: "0.27.4"
+    rasa:
+      tag: "1.9.5"
